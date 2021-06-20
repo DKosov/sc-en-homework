@@ -8,7 +8,7 @@ HTTP server prolog
 Install SWI Prolog and run the server
 
 	apt-get install swi-prolog
-	swipl webserver.pl --port=8888
+	swipl webserver.pl --port=8080
 
 Run:
 
