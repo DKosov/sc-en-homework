@@ -1,0 +1,97 @@
+name: haskell-c-compare
+
+dependencies:
+  - base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+  c-sources: src/lib.c
+  ghc-options:
+    - -Werror
+    - -Wall
+    - -Wcompat
+    - -Wincomplete-record-updates
+    - -Wincomplete-uni-patterns
+    - -Wredundant-constraints
+
+executables:
+  length:
+    main: Main.hs
+    source-dirs: app/length
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -Werror
+      - -Wall
+      - -Wcompat
+      - -Wincomplete-record-updates
+      - -Wincomplete-uni-patterns
+      - -Wredundant-constraints
+    dependencies:
+      - haskell-c-compare
+  max:
+    main: Main.hs
+    source-dirs: app/max
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -Werror
+      - -Wall
+      - -Wcompat
+      - -Wincomplete-record-updates
+      - -Wincomplete-uni-patterns
+      - -Wredundant-constraints
+    dependencies:
+      - haskell-c-compare
+  csortmin:
+    main: Main.hs
+    source-dirs: app/csortmin
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -Werror
+      - -Wall
+      - -Wcompat
+      - -Wincomplete-record-updates
+      - -Wincomplete-uni-patterns
+      - -Wredundant-constraints
+    dependencies:
+      - haskell-c-compare
+  haskellsort:
+    main: Main.hs
+    source-dirs: app/haskellsort
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -Werror
+      - -Wall
+      - -Wcompat
+      - -Wincomplete-record-updates
+      - -Wincomplete-uni-patterns
+      - -Wredundant-constraints
+    dependencies:
+      - haskell-c-compare
+
+tests:
+  test:
+    main: Main.hs
+    source-dirs: test/
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -Werror
+      - -Wall
+      - -Wcompat
+      - -Wincomplete-record-updates
+      - -Wincomplete-uni-patterns
+      - -Wredundant-constraints
+      - -O0
+    dependencies:
+      - haskell-c-compare
+      - hspec >= 0.8.2
+      - QuickCheck >= 2.14.2

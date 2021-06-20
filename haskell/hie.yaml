@@ -1,0 +1,11 @@
+cradle:
+  stack:
+    components:
+      - path: "./src"
+        component: "haskell-c-compare:lib"
+      - path: "./app/length/Main.hs"
+        component: "haskell-c-compare:exe:length"
+      - path: "./app/max/Main.hs"
+        component: "haskell-c-compare:exe:max"
+      - path: "./test/Main.hs"
+        component: "haskell-c-compare:test:test"
