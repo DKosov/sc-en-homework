@@ -37,8 +37,8 @@ data_by_relation(Request) :-
 		     relation(NameString,   [])
 		    ]),
     read_term_from_atom(NameString, Relation, []),
-    get_data_by_relation(Relation, Raws),
-    maplist(rows_to_term_json, Raws, PE),
+    get_data_by_relation(Relation, Rows),
+    maplist(rows_to_term_json, Rows, PE),
     prolog_to_json(json([raws=PE]), Json),
     reply_json(Json).
 
